@@ -16,24 +16,18 @@ int main(void){
 	for(int i=0;i<n;i++){
 		int height = a[i];
 		int cnt = 1;
-		
 		while(!s.empty()){
-			
 			if(s.top()<=a[i]){
-				
 				ans += (long long)s_cnt.top();
 				if(s.top()==a[i])cnt+=s_cnt.top();
-				
 				s.pop();
 				s_cnt.pop();
 			}
 			else break;
-						
 		}
 		if(!s.empty())ans++;
 		s.push(height);
 		s_cnt.push(cnt);	
-		
 	}
 	cout<<ans<<endl;
 	
